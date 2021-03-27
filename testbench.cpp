@@ -77,7 +77,7 @@ int Testbench::write_bmp(){
     return 0;
 }
 void Testbench::input_data(){
-    int offset = 28;
+    int offset = 0;
     int i, j, x, y;
     int filterHeight = 3, filterWidth = 3;
     int cnt = 0;
@@ -97,18 +97,18 @@ void Testbench::input_data(){
 						G = (0);
 						B = (0);
 					}
-                    word data;
+                    unsigned char buufer[4];
                     unsigned char mask[4];
                     // Prepare data
-                    data.uc[0] = R;
-                    data.uc[1] = G;
-                    data.uc[2] = B;
+                    buufer[0] = R;
+                    buufer[1] = G;
+                    buufer[2] = B;
                     mask[0] = 0xff;
                     mask[1] = 0xff;
                     mask[2] = 0xff;
                     mask[3] = 0;
                     // send data by socket
-                    initiator.write_to_socket(FILTER_R_ADDR, mask, data.uc, 4);
+                    initiator.write_to_socket(FILTER_R_ADDR, mask, buufer, 4);
           
                     cnt += 3;
                 }
@@ -120,16 +120,16 @@ void Testbench::input_data(){
 }
 void Testbench::output_data(){
 	int x, y;
-    word buffer;
+    unsigned char buffer[4];
     unsigned char mask[4];
 	sc_uint<8> R, G, B;
 	for (y = 0; y != height; ++y) {
 		for (x = 0; x != width; ++x) {
-            initiator.read_from_socket(FILTER_RESULT_ADDR, mask, buffer.uc, 4);
+            initiator.read_from_socket(FILTER_RESULT_ADDR, mask, buffer, 4);
 
-			*(image_t + byte_per_pixel * (width * y + x) + 2) = buffer.uc[0];
-			*(image_t + byte_per_pixel * (width * y + x) + 1) = buffer.uc[1];
-			*(image_t + byte_per_pixel * (width * y + x) + 0) = buffer.uc[2];
+			*(image_t + byte_per_pixel * (width * y + x) + 2) = buffer[0];
+			*(image_t + byte_per_pixel * (width * y + x) + 1) = buffer[1];
+			*(image_t + byte_per_pixel * (width * y + x) + 0) = buffer[2];
 		}
 	}
     sc_stop();

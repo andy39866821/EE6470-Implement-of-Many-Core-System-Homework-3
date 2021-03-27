@@ -6,38 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/home/user/EE6470/homework3/Initiator.cpp
-Initiator.h
-/home/user/EE6470/homework3/Initiator.h
-
-/home/user/EE6470/homework3/Initiator.h
-systemc
--
-tlm
-/home/user/EE6470/homework3/tlm
-tlm_utils/simple_initiator_socket.h
-/home/user/EE6470/homework3/tlm_utils/simple_initiator_socket.h
-
-/home/user/EE6470/homework3/filter.cpp
-filter.h
-/home/user/EE6470/homework3/filter.h
-
-/home/user/EE6470/homework3/filter.h
-systemc
--
-sys/time.h
--
-cmath
--
-iomanip
--
-tlm
-/home/user/EE6470/homework3/tlm
-tlm_utils/simple_target_socket.h
-/home/user/EE6470/homework3/tlm_utils/simple_target_socket.h
-filter_def.h
-/home/user/EE6470/homework3/filter_def.h
-
 /home/user/EE6470/homework3/filter_def.h
 
 /home/user/EE6470/homework3/initiator.h
@@ -47,20 +15,6 @@ tlm
 /home/user/EE6470/homework3/tlm
 tlm_utils/simple_initiator_socket.h
 /home/user/EE6470/homework3/tlm_utils/simple_initiator_socket.h
-
-/home/user/EE6470/homework3/main.cpp
-iostream
--
-string
--
-systemc
--
-sys/time.h
--
-filter.h
-/home/user/EE6470/homework3/filter.h
-testbench.h
-/home/user/EE6470/homework3/testbench.h
 
 /home/user/EE6470/homework3/testbench.cpp
 testbench.h
@@ -1500,25 +1454,9 @@ tlm_core/tlm_2/tlm_2_interfaces/tlm_fw_bw_ifs.h
 sysc/kernel/sc_cmnhdr.h
 -
 
-/opt/systemc/include/tlm_utils/peq_with_get.h
-systemc
--
-map
--
-
 /opt/systemc/include/tlm_utils/simple_initiator_socket.h
 tlm
 -
 tlm_utils/convenience_socket_bases.h
 /opt/systemc/include/tlm_utils/tlm_utils/convenience_socket_bases.h
-
-/opt/systemc/include/tlm_utils/simple_target_socket.h
-systemc
--
-tlm
--
-tlm_utils/convenience_socket_bases.h
-/opt/systemc/include/tlm_utils/tlm_utils/convenience_socket_bases.h
-tlm_utils/peq_with_get.h
-/opt/systemc/include/tlm_utils/tlm_utils/peq_with_get.h
 
